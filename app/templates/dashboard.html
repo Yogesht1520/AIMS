@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AIMS Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Automated Incident Management System (AIMS)</h1>
+
+    <div class="card">
+        <h2>Incidents Summary</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Severity</th>
+                    <th>Status</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for incident in incidents %}
+                <tr>
+                    <td>{{ incident[0] }}</td>
+                    <td>{{ incident[1] }}</td>
+                    <td>{{ incident[3] }}</td>
+                    <td>{{ incident[4] }}</td>
+                    <td>{{ incident[5] }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
